@@ -11,11 +11,12 @@ SITE=$2
 PROFILE=$3
 WEBSERVER=$4
 DBSERVER=$5
-MAKEFILE=$6
-BUILD_NUMBER=$7
+GITURL=$6
+GITBRANCH=$7
+BUILD_NUMBER=$8
 DATE=`date +%Y%m%d%H%M%S`
 
-if [[ -z $HOST ]] || [[ -z $SITE ]] || [[ -z $PROFILE ]] || [[ -z $WEBSERVER ]] || [[ -z $DBSERVER ]] || [[ -z $MAKEFILE ]] || [[ -z $BUILD_NUMBER ]]
+if [[ -z $HOST ]] || [[ -z $SITE ]] || [[ -z $PROFILE ]] || [[ -z $WEBSERVER ]] || [[ -z $DBSERVER ]] || [[ -z $GITURL ]] || [[ -z $GITBRANCH]] || [[ -z $BUILD_NUMBER ]]
 then
   echo "Missing args! Exiting"
   exit 1
@@ -42,5 +43,5 @@ fi
 # Loop over each 'task' and call it as a function via the fabfile, 
 # with some extra arguments which are sent to this shell script by Jenkins
 for task in ${TASKS[@]}; do
-  fab -f $FABFILE -H $HOST $task:site=$SITE,profile=$PROFILE,webserver=$WEBSERVER,dbserver=$DBSERVER,makefile=$MAKEFILE,build=$DATE || exit 1
+  fab -f $FABFILE -H $HOST $task:site=$SITE,profile=$PROFILE,webserver=$WEBSERVER,dbserver=$DBSERVER,giturl=$GITURL,gitbranch=$GITBRANCH,build=$DATE || exit 1
 done
