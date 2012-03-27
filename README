@@ -1,3 +1,14 @@
+This is basically a fork of VeggieMeat/aegir_cid (which is a fork of mig5/aegir_cid)
+
+This particular script is intended to be used to deploy sites to Aegir from Git
+via Jenkins. Basically, where the original used Drush Make, this script uses Git.
+
+My reason for this is that, while Drush Make works in many cases, I prefer to have
+all of the codebase for a site immediately available through a simple Git clone. It
+works and I don't have to think as hard as I do to build a Drush Make file. Is it
+more resource intensive to go this route? Perhaps, or perhaps not - I haven't taken
+the time to measure.
+
 KNOWN ISSUES
 
 Aegir <= 1.6 seems to force the db_server to localhost in the drush alias file.
