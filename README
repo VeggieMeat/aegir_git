@@ -1,0 +1,4 @@
+KNOWN ISSUES
+
+Aegir <= 1.6 seems to force the db_server to localhost in the drush alias file.
+Seems fixed with Aegir 1.7.
