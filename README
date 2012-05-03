@@ -7,7 +7,18 @@ My reason for this is that, while Drush Make works in many cases, I prefer to ha
 all of the codebase for a site immediately available through a simple Git clone. It
 works and I don't have to think as hard as I do to build a Drush Make file. Is it
 more resource intensive to go this route? Perhaps, or perhaps not - I haven't taken
-the time to measure.
+the time to measure, and honestly don't plan to.
+
+USAGE:
+
+/usr/local/bin/aegir_git/deployment.sh aegir.example.com your.site.com profile webserver dbserver git@git.example.com gitrepo gitbranch ${BUILD_NUMBER}
+
+For example, in my case I might use the following to deploy staging.vmdoh.com from the
+"staging" branch onto a web/db server combo called xray-rs01.vmdoh.com:
+
+/usr/local/bin/aegir_git/deployment.sh alpha-rs01.vmdoh.com staging.vmdoh.com standard xrayrs01vmdohcom xrayrs01vmdohcom gitolite@golf-rs01.vmdoh.com vmdoh staging ${BUILD_NUMBER}
+
+
 
 KNOWN ISSUES
 
