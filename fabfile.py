@@ -8,7 +8,7 @@ env.shell = '/bin/bash -c'
 def build_platform(site, profile, webserver, dbserver, giturl, gitrepo, gitbranch, build):
   print "===> Building the platform..."
   run("git archive --prefix=/var/aegir/platforms/%s --format=tar --remote=%s:%s %s | tar -xvf -" % (build, giturl, gitrepo, gitbranch))
-  run("drush --root=/var/aegir/platforms/%s provision-save @platform_%s --web_server=@server_%s --context_type=platform --debug" % (build, build, webserver))
+  run("drush --root=/var/aegir/platforms/%s/ provision-save @platform_%s --web_server=@server_%s --context_type=platform --debug" % (build, build, webserver))
   run("drush @hostmaster hosting-import '@platform_%s'" % build)
   run("drush @hostmaster hosting-dispatch")
 
