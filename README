@@ -20,6 +20,12 @@ For example, in my case I might use the following to deploy staging.vmdoh.com fr
 
 
 
+TODO
+
+* Add means of checking if dev/staging versions already exist and, if so, clone the
+  appropriate version
+
+
 KNOWN ISSUES
 
 Aegir <= 1.6 seems to force the db_server to localhost in the drush alias file.
